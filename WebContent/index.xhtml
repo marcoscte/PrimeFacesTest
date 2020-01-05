@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+     <h:head>
+
+     </h:head>
+
+     <h:body>
+		<h:form id="form">
+			
+			<p:panel>
+			<p:panelGrid>
+				<p:outputLabel for="cvebusqueda"/>
+				<p:inputText id="cvebusqueda" value="#{viewSeries.cve}"/>
+				<p:commandButton action="#{viewSeries.buscaSeries}" update="form:tablaSeries"/>
+			</p:panelGrid>
+					
+				<p:dataTable id="tablaSeries" var="ser" value="#{viewSeries.seriesList}"
+				paginator="true" rows="15">
+					<p:column headerText="ID">
+						<h:outputText value="#{ser.id}"/>
+					</p:column>
+					<p:column headerText="Titulo">
+						<h:outputText value="#{ser.titulo}"/>
+					</p:column>
+					<p:column headerText="Descripcion">
+						<h:outputText value="#{ser.desc}"/>
+					</p:column>	
+					<p:column headerText="akjnad">
+						<p:commandButton action="#{viewSeries.hola(ser)}"/>
+						<p:commandButton actionListener="#{viewSeries.hola(ser)}">
+					       <f:ajax render="tablaSeries" execute="form" />
+					   </p:commandButton>
+						
+					</p:column>	
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+
+     </h:body>
+</html>
