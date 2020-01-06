@@ -14,7 +14,7 @@
 			<p:panelGrid>
 				<p:outputLabel for="cvebusqueda"/>
 				<p:inputText id="cvebusqueda" value="#{viewSeries.cve}"/>
-				<p:commandButton action="#{viewSeries.buscaSeries}" update="form:tablaSeries"/>
+				<p:commandButton action="#{viewSeries.buscaSeries}" update="tablaSeries"/>
 			</p:panelGrid>
 					
 				<p:dataTable id="tablaSeries" var="ser" value="#{viewSeries.seriesList}"
@@ -30,9 +30,7 @@
 					</p:column>	
 					<p:column headerText="akjnad">
 						<p:commandButton action="#{viewSeries.hola(ser)}"/>
-						<p:commandButton actionListener="#{viewSeries.hola(ser)}">
-					       <f:ajax render="tablaSeries" execute="form" />
-					   </p:commandButton>
+						
 						
 					</p:column>	
 				</p:dataTable>

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
 
 import objects.Serie;
 import service.ConnectionDB;
@@ -31,6 +31,7 @@ public void buscaSeries() {
 }
 public void hola(Serie s) {
 	System.out.println(s);
+	
 }
 
 
